@@ -1,0 +1,39 @@
+image: FUSAR_Ship/train/Fishing/Ship_C04S02N0055.tiff
+image_size_hxw: 512 512
+seed: 42
+random_placement_seed: 59
+random_mode: size_matched
+box_format: name  top  left  bottom  right  height  width
+coordinate_origin: top-left, y downward, x rightward, inclusive-exclusive [top,bottom) x [left,right)
+global_scale: 0.5 1.0
+local_scale: 0.05 0.32
+aspect: 0.75 1.3333
+n_global: 2
+n_local: 6
+
+# CAMC = SARContentAwareCropper (content_aware), training recipe from vitb16_reg.yaml
+camc_scene_concentration: 0.898832
+camc_n_anchors: 2
+
+[CAMC]
+global_1  0  28  372  512  372  484
+global_2  28  8  400  448  372  440
+local_1  0  304  136  408  136  104
+local_2  196  176  316  288  120  112
+local_3  164  208  284  324  120  116
+local_4  216  192  340  332  124  140
+local_5  208  128  312  260  104  132
+local_6  244  176  380  280  136  104
+
+# Random = size-matched: reuse CAMC (h, w) per box, randomize top-left only
+# This isolates location; paired boxes have identical height and width.
+
+[Random]
+global_1  57  2  429  486  372  484
+global_2  117  2  489  442  372  440
+local_1  69  153  205  257  136  104
+local_2  365  11  485  123  120  112
+local_3  348  318  468  434  120  116
+local_4  5  248  129  388  124  140
+local_5  193  248  297  380  104  132
+local_6  274  152  410  256  136  104
