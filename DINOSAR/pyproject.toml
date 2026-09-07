@@ -1,0 +1,89 @@
+[project]
+name = "dinosar"
+version = "0.1.0"
+description = "DINOSAR self-supervised pretraining framework for SAR images"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = {text = "MIT"}
+authors = [
+    {name = "Yan Tang"}
+]
+keywords = ["sar", "vision-transformer", "self-supervised-learning", "dino", "pytorch"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.24.0",
+    "huggingface-hub>=1.0.0",
+    "matplotlib>=3.7.0",
+    "omegaconf>=2.3.0",
+    "pillow>=9.5.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.65.0",
+    "scipy>=1.10.0",
+    "scikit-learn>=1.2.0",
+    "opencv-python>=4.7.0",
+    "einops>=0.6.1",
+    "jupyter>=1.1.0",
+    "ipykernel>=6.29.0",
+    "torch==2.10.0",
+    "torchvision==0.25.0",
+    "trackio[gpu]>=0.25.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dinosar*"]
+exclude = ["tests*", "scripts*"]
+
+[tool.setuptools.package-data]
+dinosar = ["configs/**/*.yaml", "assets/*.png", "assets/*.tif", "assets/README.md"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+markers = [
+    "slow: marks tests as slow",
+    "gpu: marks tests that require GPU",
+    "distributed: marks tests that require multiple GPUs",
+]
+addopts = [
+    "--strict-markers",
+    "--tb=short",
+    "-v",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]

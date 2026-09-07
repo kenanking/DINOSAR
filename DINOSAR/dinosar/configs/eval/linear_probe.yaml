@@ -1,0 +1,15 @@
+defaults:
+  - base
+
+eval:
+  task: linear
+  normalize_features: false
+
+linear:
+  epochs: 100
+  lr: 0.03
+  weight_decay: 0.0
+  optimizer: sgd
+  momentum: 0.9
+  warmup_epochs: 10
+  use_batch_norm: true

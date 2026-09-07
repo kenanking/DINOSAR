@@ -1,0 +1,23 @@
+defaults:
+  - base
+
+eval:
+  task: few_shot
+
+few_shot:
+  num_shots: 40
+  seeds:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+  batch_size: 50
+  epochs: 50
+  lr: 2.5e-4
+  weight_decay: 0.05
+  warmup_epochs: 5
+  warmup_start_lr: 0.0
+  min_lr: 1.0e-6
+  label_smoothing: 0.1
+  layer_decay: 0.75

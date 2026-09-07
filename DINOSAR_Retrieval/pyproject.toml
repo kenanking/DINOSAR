@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openclip-retrieval"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "open_clip_torch>=3.0",
+    "torch>=2.3",
+    "torchvision",
+    "pillow",
+    "numpy",
+    "tqdm",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

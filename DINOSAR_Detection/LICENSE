@@ -1,0 +1,12 @@
+Third-party licensing notice
+
+This downstream integration is not covered by a blanket MIT license.
+Third-party code and dependencies remain subject to their respective upstream
+licenses and notices. Consult the applicable upstream repositories:
+
+Detectron2: https://github.com/facebookresearch/detectron2
+DINOv3: https://github.com/facebookresearch/dinov3
+
+The MIT license in ../DINOSAR/LICENSE applies to original DINOSAR code,
+not to third-party components. Model weights and datasets are subject to
+the terms provided by their respective sources.

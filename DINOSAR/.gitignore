@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv
+
+# Worktrees
+.worktrees/
+
+# Experiment outputs
+experiments/*
+!experiments/.gitkeep
+!experiments/logs/
+experiments/logs/*
+!experiments/logs/.gitkeep
+
+# Test smoke outputs
+tests/artifacts/

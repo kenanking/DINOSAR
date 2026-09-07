@@ -1,0 +1,11 @@
+defaults:
+  - base
+
+eval:
+  task: knn
+
+knn:
+  ks:
+    - 1
+    - 5
+  temperature: 0.07

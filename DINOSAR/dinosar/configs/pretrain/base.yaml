@@ -1,0 +1,105 @@
+dino:
+  out_dim: 65536
+  student_temp: 0.1
+  koleo_loss_weight: 0.1
+
+ibot:
+  loss_weight: 1.0
+  mask_sample_probability: 0.5
+  mask_ratio_min_max: [0.1, 0.5]
+  head_n_prototypes: 65536
+  student_temp: 0.1
+
+hidden_distill:
+  loss_weight: 0.0
+  target_blocks: []
+  loss_type: zscore_mse       # zscore_mse | cosine | smooth_l1
+  mask_policy: visible        # visible | all | masked
+  block_weights: null         # null or one weight per target block
+  start_epoch: 0.0
+  warmup_epochs: 0.0
+  use_predictor: false        # fixed identity-init, bias-free linear predictor
+
+data:
+  data_path: null                  # required: dataset root
+  dataset_size: null               # required when train.iters_per_epoch is null
+  batch_size: 128                  # per-GPU batch size
+  image_size: 224
+  global_crops_size: 224
+  local_crops_size: 96
+  global_crops_scale: [0.5, 1.0]
+  local_crops_scale: [0.1, 0.5]
+  num_local_crops: 6
+  num_workers: 6
+  prefetch_factor: 4
+  pin_memory: true
+  normalize_mean: 0.219
+  normalize_std: 0.220
+  cropping_strategy: random
+  content_aware_crop:
+    coarse_scales: [3, 7]
+    max_anchor_prototypes: 6
+    num_candidates: 256
+    normalize_amplitude: true   # per-image min-max before CAMC scoring; set false for pre-normalized [0,1] data
+  augmentation:
+    gaussian_blur:
+      enabled: true
+    sigma_clip:
+      enabled: true
+      p: 0.3
+      sigma_min: 2.0
+      sigma_max: 4.0
+
+train:
+  seed: 42
+  epochs: 100
+  iters_per_epoch: null            # null => ceil(data.dataset_size / train.target_effective_batch)
+  total_iters: null                # derived: epochs * iters_per_epoch
+  target_effective_batch: 1024     # used only when iters_per_epoch is null
+  save_every_steps: 5000           # training checkpoint interval (step-based)
+  eval_save_every_steps: 5000      # eval backbone export interval; set null to disable
+  keep_last_n_checkpoints: -1      # -1 => keep all; dataset-specific configs may override
+  eval_keep_last_n: -1             # -1 => keep all; dataset-specific configs may override
+  log_every_steps: 20
+  grad_accum_steps: null           # null => auto-derive as target_effective_batch // (batch_size × world_size)
+  clip_grad: 5.0
+  use_amp: true
+  amp_dtype: bfloat16
+  layerwise_decay: 0.95
+  patch_embed_lr_mult: 0.1
+  dino_head_wd_multiplier: 1.0
+  head_lr_multiplier: 1.0
+  head_betas: null
+  adamw_beta1: 0.9
+  adamw_beta2: 0.99
+  schedules:
+    lr:
+      start: 0.0
+      peak: 5.0e-4
+      end: 1.0e-6
+      warmup_epochs: 10
+      freeze_last_layer_epochs: 0
+    weight_decay:
+      start: 0.04
+      peak: 0.04
+      end: 0.2
+      warmup_epochs: 0
+    momentum:
+      start: 0.996
+      peak: 0.996
+      end: 0.9999
+      warmup_epochs: 0
+    teacher_temp:
+      start: 0.04
+      peak: 0.07
+      end: 0.07
+      warmup_epochs: 1
+  compile:
+    enabled: true
+  output_dir: experiments/pretrain/default
+  resume: null
+
+logging:
+  project_name: dinosar
+  run_name: null
+  enabled: true

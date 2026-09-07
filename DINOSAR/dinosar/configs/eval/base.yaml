@@ -1,0 +1,24 @@
+defaults:
+  - ../models/dinov3/vits16_reg
+
+model:
+  checkpoint_type: backbone
+  checkpoint_path: null
+
+data:
+  root: null
+  train_split: train
+  val_split: test
+  crop_size: 224
+  normalize_mean: 0.219
+  normalize_std: 0.220
+  num_output_channels: 1
+  apply_normalize: true
+
+eval:
+  task: null
+  output_dir: ./output/eval/${eval.task}
+  batch_size: 256
+  num_workers: 8
+  normalize_features: true
+  feature_key: x_norm_clstoken

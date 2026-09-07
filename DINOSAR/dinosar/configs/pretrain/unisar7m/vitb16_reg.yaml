@@ -1,0 +1,37 @@
+defaults:
+  - ../base
+  - ../../models/dinov3/vitb16_reg
+
+data:
+  data_path: /path/to/UniSAR-7M
+  dataset_size: 7047666
+  batch_size: 192                  # per-GPU; ViT-B on single A800
+  cropping_strategy: content_aware
+  local_crops_scale: [0.05, 0.32]
+
+hidden_distill:
+  loss_weight: 0.0
+  target_blocks: []
+  block_weights: null
+  use_predictor: false
+
+train:
+  epochs: 60
+  # Effective batch = batch_size × world_size × grad_accum_steps = target_effective_batch.
+  # grad_accum_steps is auto-derived at runtime (4×A800 → 2; 2×A800 → 4; 8×A800 → 1).
+  target_effective_batch: 1536
+  keep_last_n_checkpoints: 5
+  eval_keep_last_n: -1
+  schedules:
+    lr:
+      peak: 6.0e-4
+      end: 5.0e-6
+      warmup_epochs: 3
+      freeze_last_layer_epochs: 1
+    momentum:
+      start: 0.994
+      peak: 0.994
+  output_dir: experiments/pretrain/unisar7m_vitb16_60e
+
+logging:
+  run_name: vitb16_camc_60e

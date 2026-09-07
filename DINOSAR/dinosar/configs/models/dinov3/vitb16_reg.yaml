@@ -1,0 +1,15 @@
+model:
+  arch: vit_base
+  patch_size: 16
+  in_chans: 1
+  init_checkpoint: null
+  drop_path_rate: 0.2
+  num_register_tokens: 4
+  layerscale_init: 1.0e-5
+  qkv_bias: true
+  proj_bias: true
+  ffn_bias: true
+  mask_k_bias: true
+  untie_global_and_local_cls_norm: true
+  pos_embed_rope_base: 100.0
+  pos_embed_rope_rescale_coords: 2.0

@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use DINOSAR, please cite the accompanying paper below."
+type: software
+title: DINOSAR
+url: "https://github.com/kenanking/DINOSAR"
+repository-code: "https://github.com/kenanking/DINOSAR"
+authors:
+  - family-names: Tang
+    given-names: Yan
+  - family-names: Jin
+    given-names: Yifeng
+  - family-names: Miao
+    given-names: Zekai
+  - family-names: Ji
+    given-names: Min
+  - family-names: Duan
+    given-names: Yu
+  - family-names: Zhang
+    given-names: Shaoming
+  - family-names: Wang
+    given-names: Jianmei
+preferred-citation:
+  type: unpublished
+  title: "DINOSAR: Large-Scale SAR Self-Supervised Pretraining with Content-Aware View Construction"
+  authors:
+    - family-names: Tang
+      given-names: Yan
+    - family-names: Jin
+      given-names: Yifeng
+    - family-names: Miao
+      given-names: Zekai
+    - family-names: Ji
+      given-names: Min
+    - family-names: Duan
+      given-names: Yu
+    - family-names: Zhang
+      given-names: Shaoming
+    - family-names: Wang
+      given-names: Jianmei
+  year: 2026
+  notes: "Submitted to the International Journal of Digital Earth (IJDE)."

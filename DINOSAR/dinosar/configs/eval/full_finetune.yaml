@@ -1,0 +1,27 @@
+defaults:
+  - base
+
+eval:
+  task: full_finetune
+
+full_finetune:
+  seeds:
+    - 0
+  batch_size: 50
+  epochs: 50
+  lr: 2.5e-4
+  weight_decay: 0.05
+  warmup_epochs: 5
+  warmup_start_lr: 0.0
+  min_lr: 1.0e-6
+  label_smoothing: 0.1
+  layer_decay: 0.75
+  freeze_backbone: false
+  freeze_patch_embed: false
+  freeze_blocks: 0
+  head_warmup_epochs: 0
+  backbone_lr_scale: 1.0
+  l2_sp_weight: 0.0
+  horizontal_flip_p: 0.1
+  vertical_flip_p: 0.1
+  log_every_epochs: 1

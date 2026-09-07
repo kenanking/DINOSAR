@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.vscode/
+
+data/
+outputs/
+weights/
+*.pth
+*.pt
+*.safetensors
+
+tmp/

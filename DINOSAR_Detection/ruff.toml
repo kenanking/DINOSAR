@@ -1,0 +1,14 @@
+line-length = 120
+extend-exclude = [
+    "configs",
+    "dependency",
+    "output",
+    "weights",
+    "__pycache__",
+]
+
+[lint]
+select = ["E", "F"]
+
+[lint.per-file-ignores]
+"train.py" = ["E402"]

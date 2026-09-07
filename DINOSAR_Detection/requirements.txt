@@ -1,0 +1,25 @@
+# Runtime dependencies for the detection codebase.
+# detectron2 and dinov3 are vendored under dependency/ (see README), so their own
+# runtime dependencies are listed here explicitly.
+# torch keeps a lower bound for compatibility with the pinned detectron2 revision
+# (fd27788); install the build matching your CUDA from https://pytorch.org if the
+# default wheel does not fit.
+
+torch>=2.3
+torchvision>=0.18
+numpy
+pillow
+pyyaml
+tqdm
+pycocotools
+omegaconf
+# --- detectron2 runtime dependencies (vendored, hence not auto-installed) ---
+yacs
+termcolor
+tabulate
+cloudpickle
+fvcore
+iopath
+portalocker
+matplotlib
+tensorboard

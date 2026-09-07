@@ -1,0 +1,36 @@
+# Runtime outputs and generated artifacts
+/output/
+/visualization/
+/tmp/
+
+# Local datasets, checkpoints, and environment archives
+/datasets/
+/weights/
+
+# Vendored or external worktrees
+/dependency/
+
+# Notebook scratch data
+.ipynb_checkpoints/
+
+# Python, build, and tool caches
+__pycache__/
+*.py[cod]
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+
+# Logs and experiment traces
+*.log
+*.jsonl
+*.sqlite3
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local/private scripts and docs

@@ -1,0 +1,79 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments and package metadata
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+
+# Editors and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local environment files
+.env
+.env.*
+*.local
+
+# Datasets and generated dataset variants
+datasets/*
+!datasets/.gitkeep
+
+# Model weights, logs, checkpoints, and training outputs
+experiments/*
+!experiments/.gitkeep
+!experiments/logs/
+!experiments/logs/.gitkeep
+!experiments/work_dirs/
+!experiments/work_dirs/.gitkeep
+!experiments/weights/
+!experiments/weights/.gitkeep
+experiments/logs/*
+!experiments/logs/.gitkeep
+experiments/work_dirs/*
+!experiments/work_dirs/.gitkeep
+experiments/weights/*
+!experiments/weights/.gitkeep
+!experiments/weights/README.md
+
+# Large binary/archive files
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+*.pkl
+*.pickle
+*.npy
+*.npz
+*.mat
+*.h5
+*.hdf5
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.whl
+*.pdf
+
+# Temporary analysis outputs
+tmp/
+tmp_*/
+temp/
+*.log
