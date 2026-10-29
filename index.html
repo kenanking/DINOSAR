@@ -3,10 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="DINOSAR: large-scale SAR self-supervised pretraining with content-aware view construction. Explore the method, UniSAR-7M dataset, pretrained models, and downstream results.">
+  <meta name="description" content="DINOSAR: large-scale SAR self-supervised pretraining with content-aware view construction. Accepted by the International Journal of Digital Earth. DOI: 10.1080/17538947.2026.2757416.">
   <meta name="theme-color" content="#f7f6f2">
   <meta property="og:title" content="DINOSAR — SAR Self-Supervised Pretraining">
-  <meta property="og:description" content="Content-aware view construction, the UniSAR-7M corpus, and released ViT-S/16 and ViT-B/16 models.">
+  <meta property="og:description" content="Accepted by the International Journal of Digital Earth. Content-aware view construction, the UniSAR-7M corpus, and released ViT-S/16 and ViT-B/16 models. DOI: 10.1080/17538947.2026.2757416.">
+  <meta name="citation_title" content="DINOSAR: Large-Scale SAR Self-Supervised Pretraining with Content-Aware View Construction">
+  <meta name="citation_journal_title" content="International Journal of Digital Earth">
+  <meta name="citation_doi" content="10.1080/17538947.2026.2757416">
   <meta property="og:type" content="website">
   <title>DINOSAR — Large-Scale SAR Self-Supervised Pretraining</title>
   <link rel="icon" href="assets/dinosaur.svg" type="image/svg+xml">
@@ -33,16 +36,16 @@
     <p class="subtitle">Large-Scale SAR Self-Supervised Pretraining<br class="desktop-break"> with Content-Aware View Construction</p>
     <p class="authors">Yan Tang<sup>*</sup>, Yifeng Jin<sup>*</sup>, Zekai Miao, Min Ji, Yu Duan, Shaoming Zhang, and Jianmei Wang</p>
     <p class="author-note"><sup>*</sup> Equal contribution</p>
-    <p class="status">Submitted to the International Journal of Digital Earth (IJDE) · 2026</p>
+    <p class="status">Accepted by the International Journal of Digital Earth (IJDE) · 2026</p>
     <p class="hero-summary">DINOSAR learns transferable SAR representations by constructing views around informative scattering structures. Content-aware multi-crop (CAMC) combines structural content, scene-adaptive anchors, and coverage diversity within a self-distillation framework.</p>
     <div class="actions">
-      <a class="button" aria-disabled="true" title="Preprint link coming soon"><span aria-hidden="true">📄</span> Paper</a>
+      <a class="button" href="https://doi.org/10.1080/17538947.2026.2757416" title="Paper DOI"><span aria-hidden="true">📄</span> Paper ↗</a>
       <a class="button primary" href="https://github.com/kenanking/DINOSAR"><span aria-hidden="true">💻</span> Code ↗</a>
       <a class="button" href="https://huggingface.co/YTang/DINOSAR">🤗 Pretrained models</a>
       <a class="button" href="https://huggingface.co/datasets/YTang/UniSAR-7M">🤗 UniSAR-7M dataset</a>
       <a class="button" href="#citation"><span aria-hidden="true">❝</span> Cite this work</a>
     </div>
-    <p class="quiet">Preprint link will be added when available.</p>
+    <p class="quiet">DOI: <a href="https://doi.org/10.1080/17538947.2026.2757416">10.1080/17538947.2026.2757416</a></p>
     <ul class="highlights" aria-label="Paper highlights">
       <li><p class="highlight-title">Content-aware views</p><p>CAMC constructs pretraining crops around informative scattering structures instead of random sampling — +7.98 pp frozen k-NN over random crops in matched ablations.</p></li>
       <li><p class="highlight-title">Open corpus and backbones</p><p>The UniSAR-7M corpus of 7.05M curated SAR images and two DINOv3 backbones (ViT-S/16, ViT-B/16) are publicly released with configs and training logs.</p></li>
@@ -236,13 +239,15 @@
   </section>
 
   <section class="section wrap" id="citation" aria-labelledby="citation-title">
-    <div class="section-heading"><p class="eyebrow">05 · Citation</p><h2 id="citation-title">Cite DINOSAR</h2><p>The manuscript is submitted to the International Journal of Digital Earth (IJDE).</p></div>
+    <div class="section-heading"><p class="eyebrow">05 · Citation</p><h2 id="citation-title">Cite DINOSAR</h2><p>Accepted by the International Journal of Digital Earth (IJDE).</p></div>
     <div class="citation-box"><div class="citation-toolbar"><span>BibTeX</span><button id="copy-citation" type="button" hidden aria-label="Copy BibTeX citation" title="Copy BibTeX"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button><span id="copy-status" role="status" aria-live="polite"></span></div>
-<pre id="bibtex">@unpublished{tang2026dinosar,
-  title = {DINOSAR: Large-Scale SAR Self-Supervised Pretraining with Content-Aware View Construction},
+<pre id="bibtex">@article{tang2026dinosar,
+  title = {{DINOSAR}: Large-Scale {SAR} Self-Supervised Pretraining with Content-Aware View Construction},
   author = {Tang, Yan and Jin, Yifeng and Miao, Zekai and Ji, Min and Duan, Yu and Zhang, Shaoming and Wang, Jianmei},
+  journal = {International Journal of Digital Earth},
   year = {2026},
-  note = {Submitted to the International Journal of Digital Earth (IJDE)}
+  doi = {10.1080/17538947.2026.2757416},
+  url = {https://doi.org/10.1080/17538947.2026.2757416}
 }</pre></div>
   </section>
 </main>
