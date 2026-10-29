@@ -20,7 +20,7 @@ authors:
   - family-names: Wang
     given-names: Jianmei
 preferred-citation:
-  type: unpublished
+  type: article
   title: "DINOSAR: Large-Scale SAR Self-Supervised Pretraining with Content-Aware View Construction"
   authors:
     - family-names: Tang
@@ -38,4 +38,6 @@ preferred-citation:
     - family-names: Wang
       given-names: Jianmei
   year: 2026
-  notes: "Submitted to the International Journal of Digital Earth (IJDE)."
+  journal: "International Journal of Digital Earth"
+  doi: "10.1080/17538947.2026.2757416"
+  url: "https://doi.org/10.1080/17538947.2026.2757416"

@@ -2,7 +2,9 @@
 
 # DINOSAR: Large-Scale SAR Self-Supervised Pretraining with Content-Aware View Construction
 
-**Submitted to the International Journal of Digital Earth (IJDE)**
+**Accepted by the International Journal of Digital Earth (IJDE)**
+
+**DOI:** [10.1080/17538947.2026.2757416](https://doi.org/10.1080/17538947.2026.2757416)
 
 **[Project homepage](https://ehehe.cn/DINOSAR/)** · **[Getting started](#getting-started)** · **[Results](docs/results.md)** · **[Citation](#citation)**
 
@@ -130,10 +132,12 @@ the source datasets, for making this research possible.
 ## Citation
 
 ```bibtex
-@unpublished{tang2026dinosar,
+@article{tang2026dinosar,
   title = {{DINOSAR}: Large-Scale {SAR} Self-Supervised Pretraining with Content-Aware View Construction},
   author = {Tang, Yan and Jin, Yifeng and Miao, Zekai and Ji, Min and Duan, Yu and Zhang, Shaoming and Wang, Jianmei},
+  journal = {International Journal of Digital Earth},
   year = {2026},
-  note = {Submitted to the International Journal of Digital Earth}
+  doi = {10.1080/17538947.2026.2757416},
+  url = {https://doi.org/10.1080/17538947.2026.2757416}
 }
 ```
